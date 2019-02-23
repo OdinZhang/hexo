@@ -332,60 +332,19 @@
       
         
           
-            <p>复习完了，游戏也玩够了，干脆更新一下吧</p>
-<p>要想使用sympy包，肯定是要先导入，下面是导入的两种方法</p>
-<p><code>import sympy</code></p>
-<p><code>import sympy as *</code></p>
-<p>这两者之间的差距肯定是有的，第一种的话就是在使用sympy函数的时候需要在其前面加一个<code>sympy.</code>以示其位于sympy包内，第二种方法则不需要。不过如果导入多个包的话建议用第一种方法以示区分，否则可能会有一些函数冲突</p>
-<p>在sympy中，要想使用一个字母（例如x作为变量），需要预先声明</p>
-<p><code>x = symbols(&#39;x&#39;)</code></p>
-<p>多个变量的话则可以用</p>
-<p><code>x,y = symbols(&#39;x y&#39;)</code></p>
-<p>作为简写以提升输入速度</p>
-<p>在notebook中输入一段简单的代码如下</p>
-<pre><code>from sympy import *
-x=symbols(&apos;x&apos;)
-expand(x*(x+1))
-</code></pre><p>这样的话输出的结果是</p>
-<p>x**2 + x</p>
-<p>这个样子，但是这并不符合我们的日常使用规范，因此，只需要在第二行添加</p>
-<p><code>init_printing(use_unicode=True)</code></p>
-<p>或者</p>
-<p><code>init_printing()</code></p>
-<p>就能输出我们日常所习惯的样式，如下</p>
-<p>$x^{2}+x$</p>
-<p>当然，有些时候我们并不想输出展开的形式，那么只需要把第三行改为</p>
-<p><code>x*(x+1)</code></p>
-<p>就可以了，当然，使用函数factor()也是可以强制转换为$x(x+1)$的形式</p>
-<p>接下来将介绍sympy里面几个比较常用的函数</p>
-<ol>
-<li>求导（以cos(x)）为例</li>
-</ol>
-<p><code>diff(cos(x),x)</code></p>
-<ol start="2">
-<li>不定积分（以x+1为例）</li>
-</ol>
-<p><code>integrate(x+1,x)</code></p>
-<ol start="3">
-<li>定积分（以x+1在0到1上的积分为例）</li>
-</ol>
-<p><code>integrate(x+1,(x,0,1))</code></p>
-<ol start="4">
-<li>极限（以1/x其中x趋于正无穷为例）</li>
-</ol>
-<p><code>limit(1/x,x,+oo)</code></p>
-<ol start="5">
-<li>解方程（以x^2-2=0为例）</li>
-</ol>
-<p><code>solve(x**2 - 2, x)</code></p>
-<ol start="6">
-<li><p>解微分方程（以y’’-y=e^t为例）</p>
-<p>y = Function(‘y’)<br>dsolve(Eq(y(t).diff(t, t) - y(t), exp(t)), y(t))</p>
-</li>
-</ol>
-<p>暂时先更新这么多，剩下的有时间再说 最后，新年快乐</p>
-
-          
+          复习完了，游戏也玩够了，干脆更新一下吧
+要想使用sympy包，肯定是要先导入，下面是导入的两种方法
+import sympy
+import sympy as *
+这两者之间的差距肯定是有的，第一种的话就是在使用sympy函数的时候需要在其前面加一个sympy.以示其位于sympy包内，第二种方法则不
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hexo/2019/02/07/e5-a6-82-e4-bd-95-e4-bc-98-e9-9b-85-e7-9a-84-e8-bf-9b-e8-a1-8c-e7-a7-91-e5-ad-a6-e8-ae-a1-e7-ae-97-ef-bc-88-e4-b8-89-ef-bc-89/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -535,25 +494,26 @@ expand(x*(x+1))
       
         
           
-            <p>今天我将先介绍一下notebook的基本操作</p>
-<p>首先，在开始菜单中找到</p>
-<p><img src="https://www.godot.xyz/wp-content/uploads/2018/12/图片-7.png" alt></p>
-<p>括号里为你新建的环境名，如myconda</p>
-<p>点击之后就会弹出一个命令提示框，接着就会弹出默认浏览器</p>
-<p><img src="https://www.godot.xyz/wp-content/uploads/2018/12/图片-8-1024x505.png" alt></p>
-<p>如图</p>
-<p>首先，点击右上角的new</p>
-<p><img src="https://www.godot.xyz/wp-content/uploads/2018/12/图片-9.png" alt></p>
-<p>选择python3，就会弹出一个新的界面</p>
-<p><img src="https://www.godot.xyz/wp-content/uploads/2018/12/图片-12-1024x182.png" alt></p>
-<p>这些按钮相信我不用多说大家就会明白，对于仅仅科学计算来说，上面那些基本都用不到，仅说明一下红框处就是文件名，点击它就可以改名字了</p>
-<p>然后在下面的代码框中输入代码，点击运行就可以了</p>
-<p><img src="https://www.godot.xyz/wp-content/uploads/2018/12/图片-13-1024x67.png" alt></p>
-<p>这样就完成了notebook的基本使用了，当你想打开上一次编辑的代码时，只需要选择ipynb文件就可以，比如Untitled文件</p>
-<p><img src="https://www.godot.xyz/wp-content/uploads/2018/12/图片-14-1024x27.png" alt></p>
-<p>这样就可以继续上一次的代码编辑了</p>
+          今天我将先介绍一下notebook的基本操作
+首先，在开始菜单中找到
 
-          
+括号里为你新建的环境名，如myconda
+点击之后就会弹出一个命令提示框，接着就会弹出默认浏览器
+
+如图
+首先，点击右上角的new
+
+选择python3，就会弹出一个新的界面
+
+这些按钮相信我不用多说大家就会明白，对于仅仅科学计
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hexo/2018/12/21/e5-a6-82-e4-bd-95-e4-bc-98-e9-9b-85-e5-9c-b0-e8-bf-9b-e8-a1-8c-e7-a7-91-e5-ad-a6-e8-ae-a1-e7-ae-97-ef-bc-88-e4-ba-8c-ef-bc-89/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -703,27 +663,21 @@ expand(x*(x+1))
       
         
           
-            <p>带有数学公式的论文排版一直是人们心里的痛，被word折磨得体无完肤，而LaTeX却可以满足各种排版需求，本篇将介绍LaTeX的安装与使用</p>
-<p>首先，打开<a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/" target="_blank" rel="noopener">清华的texlive镜像链接</a>，选择texlive.iso下载</p>
-<p><img src="https://www.godot.xyz/wp-content/uploads/2018/12/图片-1-1024x358.png" alt></p>
-<p>选择texlive.iso下载就可以  </p>
-<p>下载完成后解压就好了</p>
-<p><img src="https://www.godot.xyz/wp-content/uploads/2018/12/图片-2.png" alt></p>
-<p>在解压后的文件夹里找到install-tl-advanced.bat并双击  </p>
-<p><img src="https://www.godot.xyz/wp-content/uploads/2018/12/图片-3.png" alt></p>
-<p>点击continue</p>
-<p><img src="https://www.godot.xyz/wp-content/uploads/2018/12/图片-4.png" alt></p>
-<p>安装texlive</p>
-<p>喝一杯茶，等待安装完成</p>
-<p><img src="https://www.godot.xyz/wp-content/uploads/2018/12/图片-5.png" alt></p>
-<p>安装完成</p>
-<p>在cmd里面输入</p>
-<pre><code>tex -version
-</code></pre><p>查看安装版本</p>
-<p><img src="https://www.godot.xyz/wp-content/uploads/2018/12/图片-6.png" alt></p>
-<p>这样就算安装成功了</p>
+          带有数学公式的论文排版一直是人们心里的痛，被word折磨得体无完肤，而LaTeX却可以满足各种排版需求，本篇将介绍LaTeX的安装与使用
+首先，打开清华的texlive镜像链接，选择texlive.iso下载
 
-          
+选择texlive.iso下载就可以  
+下载完成后解压就好了
+
+在解压后的文件夹里找到
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hexo/2018/12/19/e5-a6-82-e4-bd-95-e4-bc-98-e9-9b-85-e7-9a-84-e5-86-99-e8-ae-ba-e6-96-87-ef-bc-88-e4-b8-80-ef-bc-89/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -873,32 +827,16 @@ expand(x*(x+1))
       
         
           
-            <p>可能有些人更喜欢matlab，lingo等一些专业软件，可是，这些软件可能会有打开速度极慢，对于普通的计算（疯狂补作业），可能就会显得不太方便。在此，我将教大家使用Python来进行科学计算。</p>
-<p>Python是一种编程语言，可读性高，适合于初学者，因此也比较容易上手。什么？你说你不会编程语言？那你matlab也放弃吧，Python不见得会比他们难到哪里去了，不然？退坑吧。</p>
-<p>好了，开始正文</p>
-<p>首先，打开<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/" target="_blank" rel="noopener">清华镜像站</a>，找到最下面的新版本的anaconda进行下载安装。</p>
-<p>Windows的话要记得选择添加到环境变量里面的选项（安装时自带的哦）</p>
-<p><img src="/hexo/2018/12/17/如何优雅地进行科学计算（一）/图片.png" alt></p>
-<p>就在第一个小框框打勾（图片来自网络）</p>
-<p>之后就等待完成安装就好啦。</p>
-<p>接下来就要开始环境的配置了</p>
-<p>首先打开cmd，输入</p>
-<pre><code>conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-conda config --set show_channel_urls yes
-</code></pre><p>之后再输入</p>
-<pre><code>conda upgrade conda
-conda upgrade anaconda
-conda upgrade --all
-</code></pre><p>进行更新，这样就可以进行代码的编辑了。</p>
-<p>当然，如果想要让anaconda更加耐操的话，建议是加上一个虚拟环境，这样在自己搞坏的话还可以重新建一个虚拟环境，而无需重装anaconda</p>
-<pre><code>conda create -n myconda --clone root
-</code></pre><p>之后就可以自己随便搞了，时间有点长，毕竟文件比较大，Linux的话很快就可以完成了。</p>
-<p>需要编辑代码的时候就可以直接打开Jupyter Notebook（myconda）来进行写代码了。</p>
-<p>本篇教程到这里就结束了。下篇我会教大家如何使用Python来进行科（kuang）学（bu）计(shu)算(xue)</p>
-<p>欢迎关注我的微信公众号  我的数学世界</p>
-
-          
+          可能有些人更喜欢matlab，lingo等一些专业软件，可是，这些软件可能会有打开速度极慢，对于普通的计算（疯狂补作业），可能就会显得不太方便。在此，我将教大家使用Python来进行科学计算。
+Python是一种编程语言，可读性高，适合于初学者，因此也比较容易上手。什么？你说你不会编程语言？那你ma
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/hexo/2018/12/17/如何优雅地进行科学计算（一）/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
